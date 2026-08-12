@@ -1,0 +1,17 @@
+[2026-08-12T03:21:04.423Z] [INFO] relay.startup port=9001 mcpClientPort=9002 editorPid=16535
+[2026-08-12T03:21:04.424Z] [INFO] log Starting relay server...
+[2026-08-12T03:21:04.424Z] [INFO] log === RELAY SERVER STARTED === (unity-ai-relay v1.0.12-build.97)
+[2026-08-12T03:21:04.424Z] [INFO] log Command line arguments: ["bun","/$bunfs/root/relay_mac_arm64","--relay","--port","9001","--mcp-client-port","9002","--editor-pid","16535","--shutdown-delay","180","--log-dir","/Users/satouharuto/Documents/GitHub/Souzoukougaku/Souzoukougaku/Logs"]
+[2026-08-12T03:21:04.424Z] [INFO] log Parsed config: {"port":9001,"mcpClientPort":9002,"editorPid":"16535","shutdownDelaySeconds":180}
+[2026-08-12T03:21:04.427Z] [INFO] log Initializing relay components...
+[2026-08-12T03:21:04.427Z] [INFO] log Creating RelayEditor...
+[2026-08-12T03:21:04.432Z] [INFO] log WebSocket server started
+[2026-08-12T03:21:04.432Z] [INFO] log Relay server initialization completed
+[2026-08-12T03:21:04.432Z] [INFO] log MCP Client initialized at port: 9002
+[2026-08-12T03:21:04.449Z] [INFO] log Unity MCP Relay server started | Port: 9002 | Endpoints: /mcp/start-server, /mcp/stop-server, /mcp/server-status, /mcp/call-tool
+[2026-08-12T03:21:04.475Z] [INFO] log Unity client connected with ID: editor-16535-ydszcd (relay 1.0.12-build.97)
+[2026-08-12T03:21:04.475Z] [INFO] connection.established clientId=editor-16535-ydszcd port=9001
+[2026-08-12T03:21:04.483Z] [INFO] log [shell-env] PATH augmented with shell environment (14 entries)
+[2026-08-12T03:29:39.904Z] [INFO] log Unity client requested immediate shutdown - shutting down now, reason: Shutdown requested by client
+[2026-08-12T03:29:39.904Z] [INFO] log Shutdown request received from client editor-16535-ydszcd
+[2026-08-12T03:29:39.905Z] [INFO] log Shutdown: Initiating graceful shutdown: Shutdown requested by client
