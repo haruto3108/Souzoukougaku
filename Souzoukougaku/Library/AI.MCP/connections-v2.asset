@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.MCP.Editor::Unity.AI.MCP.Editor.ConnectionRegistry
   connections:
   - Info:
-      ConnectionId: fbc583cd-031b-4198-bd32-9c88d01245fe
-      TimestampTicks: 639221145688531450
+      ConnectionId: 9f14c231-a631-410a-925a-7f002e6f5b21
+      TimestampTicks: 639221342963503880
       Server:
-        ProcessId: 1436
+        ProcessId: 1098
         ProcessName: relay_mac_arm64
         WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
         Identity:
@@ -98,7 +98,7 @@ MonoBehaviour:
 '
           SignatureValid: 1
       Client:
-        ProcessId: 1397
+        ProcessId: 1079
         ProcessName: claude
         WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
         Identity:

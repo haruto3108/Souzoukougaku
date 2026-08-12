@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float rotationSpeed = 10f;
 
     private CharacterController controller;
     private Vector3 verticalVelocity;
@@ -34,6 +35,12 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = (right * horizontal + forward * vertical).normalized;
         controller.Move(move * moveSpeed * Time.deltaTime);
+
+        if (move.sqrMagnitude > 0f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(move, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
 
         if (controller.isGrounded && verticalVelocity.y < 0f)
         {

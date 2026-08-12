@@ -4,10 +4,12 @@ public class CameraFollow : MonoBehaviour
 {
     [Header("Target")]
     [SerializeField] private Transform target;
-    [SerializeField] private Vector3 pivotOffset = new Vector3(0f, 1.0f, 0f);
+    [SerializeField] private Vector3 pivotOffset = new Vector3(0f, 0f, 0f);
+
+    private CharacterController targetController;
 
     [Header("Distance")]
-    [SerializeField] private float desiredDistance = 5f;
+    [SerializeField] private float desiredDistance = 4f;
     [SerializeField] private float minDistance = 0.3f;
     [SerializeField] private float collisionRadius = 0.2f;
     [SerializeField] private LayerMask obstructionMask = ~0;
@@ -32,7 +34,18 @@ public class CameraFollow : MonoBehaviour
         if (target != null)
         {
             yaw = target.eulerAngles.y;
+            targetController = target.GetComponent<CharacterController>();
         }
+    }
+
+    private Vector3 GetPivot()
+    {
+        if (targetController != null)
+        {
+            return target.TransformPoint(targetController.center);
+        }
+
+        return target.position + pivotOffset;
     }
 
     private void LateUpdate()
@@ -47,7 +60,7 @@ public class CameraFollow : MonoBehaviour
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
 
         Quaternion rotation = Quaternion.Euler(pitch, yaw, 0f);
-        Vector3 pivot = target.position + pivotOffset;
+        Vector3 pivot = GetPivot();
 
         float finalDistance = desiredDistance;
         Vector3 castDirection = rotation * Vector3.back;
