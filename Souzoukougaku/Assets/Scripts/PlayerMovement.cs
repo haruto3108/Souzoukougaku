@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 verticalVelocity;
+    private bool rotationLocked;
 
     private void Awake()
     {
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = (right * horizontal + forward * vertical).normalized;
         controller.Move(move * moveSpeed * Time.deltaTime);
 
-        if (move.sqrMagnitude > 0f)
+        if (!rotationLocked && move.sqrMagnitude > 0f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(move, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
@@ -48,5 +49,15 @@ public class PlayerMovement : MonoBehaviour
         }
         verticalVelocity.y += gravity * Time.deltaTime;
         controller.Move(verticalVelocity * Time.deltaTime);
+    }
+
+    public void SetRotationLocked(bool locked)
+    {
+        rotationLocked = locked;
+    }
+
+    public void FaceForward()
+    {
+        transform.rotation = Quaternion.identity;
     }
 }
