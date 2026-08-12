@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 53
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b3dcd5cb33f46c3a2401b2b8786e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.MCP.Editor::Unity.AI.MCP.Editor.ConnectionRegistry
+  connections:
+  - Info:
+      ConnectionId: fbc583cd-031b-4198-bd32-9c88d01245fe
+      TimestampTicks: 639221145688531450
+      Server:
+        ProcessId: 1436
+        ProcessName: relay_mac_arm64
+        WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
+        Identity:
+          Path: /Users/satouharuto/.unity/relay/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64
+          SHA256Hash: 081907e8baaee06e7d839c35a318539cee67b00919502dfb2f63c2d2d9caed8c
+          IsSigned: 1
+          SignaturePublisher: 9QW8UQUTAA
+          SignatureFriendlyName: Unity Technologies SF
+          SignatureSubject: 'Executable=/Users/satouharuto/.unity/relay/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64
+
+            Identifier=com.unity.ai.assistant.relay
+
+            Format=app
+            bundle with Mach-O thin (arm64)
+
+            CodeDirectory v=20500 size=510632
+            flags=0x10000(runtime) hashes=15946+7 location=embedded
+
+            VersionPlatform=1
+
+            VersionMin=851968
+
+            VersionSDK=983552
+
+            Hash
+            type=sha256 size=32
+
+            CandidateCDHash sha256=2ed8a5df74eef2ca8707c331b46e9b2e818b4e76
+
+            CandidateCDHashFull
+            sha256=2ed8a5df74eef2ca8707c331b46e9b2e818b4e76c63c7ba45c3abda5e6c8593a
+
+            Hash
+            choices=sha256
+
+            CMSDigest=2ed8a5df74eef2ca8707c331b46e9b2e818b4e76c63c7ba45c3abda5e6c8593a
+
+            CMSDigestType=2
+
+            Executable
+            Segment base=0
+
+            Executable Segment limit=61276160
+
+            Executable
+            Segment flags=0x1
+
+            Page size=4096
+
+            CDHash=2ed8a5df74eef2ca8707c331b46e9b2e818b4e76
+
+            Signature
+            size=8992
+
+            Authority=Developer ID Application: Unity Technologies
+            SF (9QW8UQUTAA)
+
+            Authority=Developer ID Certification Authority
+
+            Authority=Apple
+            Root CA
+
+            Timestamp=Jul 11, 2026 at 0:46:17
+
+            Info.plist
+            entries=9
+
+            TeamIdentifier=9QW8UQUTAA
+
+            Runtime
+            Version=11.0.0
+
+            Sealed Resources version=2 rules=13 files=1
+
+            Internal
+            requirements count=1 size=188
+
+'
+          SignatureValid: 1
+      Client:
+        ProcessId: 1397
+        ProcessName: claude
+        WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
+        Identity:
+          Path: /Users/satouharuto/Library/Application Support/Claude/claude-code/2.1.227/claude.app/Contents/MacOS/claude
+          SHA256Hash: 9442df51ceeadb6bebefdb4952cc5478fc5dd38ee20565c558711a034896bb3e
+          IsSigned: 1
+          SignaturePublisher: Q6L2SF6YDW
+          SignatureFriendlyName: Anthropic PBC
+          SignatureSubject: 'Executable=/Users/satouharuto/Library/Application Support/Claude/claude-code/2.1.227/claude.app/Contents/MacOS/claude
+
+            Identifier=com.anthropic.claude-code
+
+            Format=app
+            bundle with Mach-O thin (arm64)
+
+            CodeDirectory v=20500 size=555973
+            flags=0x10000(runtime) hashes=17363+7 location=embedded
+
+            VersionPlatform=1
+
+            VersionMin=851968
+
+            VersionSDK=1705216
+
+            Hash
+            type=sha256 size=32
+
+            CandidateCDHash sha256=8ce4cea91a1c8f7d5ac1979b557a3089479457c7
+
+            CandidateCDHashFull
+            sha256=8ce4cea91a1c8f7d5ac1979b557a3089479457c7299f9a567faf612e58205a65
+
+            Hash
+            choices=sha256
+
+            CMSDigest=8ce4cea91a1c8f7d5ac1979b557a3089479457c7299f9a567faf612e58205a65
+
+            CMSDigestType=2
+
+            Executable
+            Segment base=0
+
+            Executable Segment limit=63717376
+
+            Executable
+            Segment flags=0x1
+
+            Page size=16384
+
+            CDHash=8ce4cea91a1c8f7d5ac1979b557a3089479457c7
+
+            Signature
+            size=9045
+
+            Authority=Developer ID Application: Anthropic
+            PBC (Q6L2SF6YDW)
+
+            Authority=Developer ID Certification Authority
+
+            Authority=Apple
+            Root CA
+
+            Timestamp=Aug 11, 2026 at 4:11:50
+
+            Notarization
+            Ticket=stapled
+
+            Info.plist entries=12
+
+            TeamIdentifier=Q6L2SF6YDW
+
+            Runtime
+            Version=26.5.0
+
+            Sealed Resources version=2 rules=13 files=0
+
+            Internal
+            requirements count=1 size=188
+
+'
+          SignatureValid: 1
+      ClientChainDepth: 1
+      ClientInfo:
+        Name: claude-code
+        Version: 2.1.227
+        Title: claude-code
+        ConnectionId: UnixSocket-1
+    Status: 1
+    ValidationReason: Approved by user
+    Identity:
+      ServerIdentityKey: Signed:/Users/satouharuto/.unity/relay/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64:9QW8UQUTAA
+      ClientIdentityKey: Signed:/Users/satouharuto/Library/Application Support/Claude/claude-code/2.1.227/claude.app/Contents/MacOS/claude:Q6L2SF6YDW
+      CombinedIdentityKey: Signed:/Users/satouharuto/.unity/relay/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64:9QW8UQUTAA|Signed:/Users/satouharuto/Library/Application
+        Support/Claude/claude-code/2.1.227/claude.app/Contents/MacOS/claude:Q6L2SF6YDW
+    DialogShown: 0
