@@ -5,11 +5,12 @@ public class PropDisguise : MonoBehaviour
 {
     [Header("Detection")]
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float interactRange = 7f;
+    [SerializeField] private float interactRange = 10f;
     [SerializeField] private LayerMask propMask = ~0;
 
     [Header("Input")]
     [SerializeField] private KeyCode disguiseKey = KeyCode.E;
+    [SerializeField] private KeyCode fixPositionKey = KeyCode.F;
 
     [Header("Player Model")]
     [SerializeField] private Renderer[] playerRenderers;
@@ -17,11 +18,16 @@ public class PropDisguise : MonoBehaviour
     [Header("Highlight")]
     [SerializeField] private Color highlightColor = new Color(1f, 0.85f, 0.2f);
 
+    [Header("Rotation")]
+    [SerializeField] private float manualRotationSpeed = 120f;
+
     private CharacterController playerController;
     private PlayerMovement playerMovement;
     private GameObject disguiseObject;
     private GameObject lookedAtProp;
     private bool isDisguised;
+    private bool isPositionLocked;
+    private Vector3 rotationPivotLocalOffset;
 
     private Material highlightMaterial;
     private Renderer highlightedRenderer;
@@ -55,6 +61,20 @@ public class PropDisguise : MonoBehaviour
     {
         if (isDisguised)
         {
+            if (!isPositionLocked)
+            {
+                HandleManualRotation();
+            }
+
+            if (Input.GetKeyDown(fixPositionKey))
+            {
+                isPositionLocked = !isPositionLocked;
+                if (playerMovement != null)
+                {
+                    playerMovement.SetPositionLocked(isPositionLocked);
+                }
+            }
+
             if (Input.GetKeyDown(disguiseKey))
             {
                 RevertDisguise();
@@ -78,6 +98,27 @@ public class PropDisguise : MonoBehaviour
         {
             ApplyDisguise(lookedAtProp);
         }
+    }
+
+    private void HandleManualRotation()
+    {
+        float rotationInput = 0f;
+        if (Input.GetKey(KeyCode.Q))
+        {
+            rotationInput -= 1f;
+        }
+        if (Input.GetKey(KeyCode.R))
+        {
+            rotationInput += 1f;
+        }
+
+        if (rotationInput == 0f)
+        {
+            return;
+        }
+
+        Vector3 pivot = transform.TransformPoint(rotationPivotLocalOffset);
+        transform.RotateAround(pivot, Vector3.up, rotationInput * manualRotationSpeed * Time.deltaTime);
     }
 
     private void DetectLookedAtProp()
@@ -169,12 +210,16 @@ public class PropDisguise : MonoBehaviour
 
         AlignBottomToPlayer(propMeshRenderer);
 
+        rotationPivotLocalOffset = transform.InverseTransformPoint(disguiseRenderer.bounds.center);
+
         SetPlayerRenderersVisible(false);
         isDisguised = true;
+        isPositionLocked = false;
 
         if (playerMovement != null)
         {
             playerMovement.SetRotationLocked(true);
+            playerMovement.SetPositionLocked(false);
         }
     }
 
@@ -203,10 +248,12 @@ public class PropDisguise : MonoBehaviour
 
         SetPlayerRenderersVisible(true);
         isDisguised = false;
+        isPositionLocked = false;
 
         if (playerMovement != null)
         {
             playerMovement.SetRotationLocked(false);
+            playerMovement.SetPositionLocked(false);
             playerMovement.FaceForward();
         }
     }

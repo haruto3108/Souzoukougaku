@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private Vector3 verticalVelocity;
     private bool rotationLocked;
+    private bool positionLocked;
 
     private void Awake()
     {
@@ -35,7 +36,10 @@ public class PlayerMovement : MonoBehaviour
         right.Normalize();
 
         Vector3 move = (right * horizontal + forward * vertical).normalized;
-        controller.Move(move * moveSpeed * Time.deltaTime);
+        if (!positionLocked)
+        {
+            controller.Move(move * moveSpeed * Time.deltaTime);
+        }
 
         if (!rotationLocked && move.sqrMagnitude > 0f)
         {
@@ -54,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
     public void SetRotationLocked(bool locked)
     {
         rotationLocked = locked;
+    }
+
+    public void SetPositionLocked(bool locked)
+    {
+        positionLocked = locked;
     }
 
     public void FaceForward()

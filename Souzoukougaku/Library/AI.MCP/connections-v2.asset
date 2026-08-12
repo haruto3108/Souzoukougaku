@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.MCP.Editor::Unity.AI.MCP.Editor.ConnectionRegistry
   connections:
   - Info:
-      ConnectionId: 7622a97e-4c87-48ac-a10e-034c8720575d
-      TimestampTicks: 639221379656441490
+      ConnectionId: 51b7a4e5-4af2-4ae2-988f-b113ff1cec3b
+      TimestampTicks: 639221405959052860
       Server:
         ProcessId: 1098
         ProcessName: relay_mac_arm64

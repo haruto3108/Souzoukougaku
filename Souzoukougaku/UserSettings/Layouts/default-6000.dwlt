@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1470
     height: 923
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -95,8 +95,8 @@ MonoBehaviour:
     y: 0
     width: 278
     height: 513
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -594,7 +594,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/satouharuto/Documents/GitHub/Souzoukougaku/Souzoukougaku
   m_LockTracker:
@@ -613,12 +613,12 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 70182
+    - m_Data: 70190
     m_LastClickedID:
-      m_Data: 70182
+      m_Data: 70190
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 60444
+    - m_Data: 60448
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -653,7 +653,7 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 60444
+    - m_Data: 60448
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -681,8 +681,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 64018
-    m_LastClickedInstanceID: 64018
+    - m_Data: 65082
+    m_LastClickedInstanceID: 65082
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -805,12 +805,13 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 3598}
       m_SelectedIDs:
-      - m_Data: 64018
+      - m_Data: 65082
       m_LastClickedID:
-        m_Data: 64018
+        m_Data: 65082
       m_ExpandedIDs:
+      - m_Data: -1356
       - m_Data: -1354
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -1264,9 +1265,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -67.67951, y: -4.2809772, z: 17.868124}
+    m_Target: {x: -44.204838, y: -5.369406, z: 26.02044}
     speed: 2
-    m_Value: {x: -67.67951, y: -4.2809772, z: 17.868124}
+    m_Value: {x: -44.204838, y: -5.369406, z: 26.02044}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1312,9 +1313,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08653605, y: 0.32888708, z: -0.030280119, w: -0.9399089}
+    m_Target: {x: -0.10482427, y: -0.07392141, z: 0.007813604, w: -0.9917088}
     speed: 2
-    m_Value: {x: -0.08653602, y: 0.32888696, z: -0.030280108, w: -0.93990856}
+    m_Value: {x: -0.104824275, y: -0.07392142, z: 0.007813605, w: -0.9917089}
   m_Size:
     m_Target: 18.112997
     speed: 2
