@@ -5,12 +5,14 @@ public class PropDisguise : MonoBehaviour
 {
     [Header("Detection")]
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float interactRange = 10f;
+    [SerializeField] private float interactRange = 15f;
     [SerializeField] private LayerMask propMask = ~0;
+    [SerializeField] private float maxPropSize = 8f;
 
     [Header("Input")]
     [SerializeField] private KeyCode disguiseKey = KeyCode.E;
     [SerializeField] private KeyCode fixPositionKey = KeyCode.F;
+    [SerializeField] private KeyCode redisguiseKey = KeyCode.T;
 
     [Header("Player Model")]
     [SerializeField] private Renderer[] playerRenderers;
@@ -25,6 +27,8 @@ public class PropDisguise : MonoBehaviour
     private PlayerMovement playerMovement;
     private GameObject disguiseObject;
     private GameObject lookedAtProp;
+    private GameObject currentDisguisedProp;
+    private GameObject lastDisguisedProp;
     private bool isDisguised;
     private bool isPositionLocked;
     private Vector3 rotationPivotLocalOffset;
@@ -98,6 +102,10 @@ public class PropDisguise : MonoBehaviour
         {
             ApplyDisguise(lookedAtProp);
         }
+        else if (Input.GetKeyDown(redisguiseKey) && lastDisguisedProp != null)
+        {
+            ApplyDisguise(lastDisguisedProp);
+        }
     }
 
     private void HandleManualRotation()
@@ -141,12 +149,20 @@ public class PropDisguise : MonoBehaviour
             }
 
             MeshFilter meshFilter = hit.collider.GetComponent<MeshFilter>();
-            if (meshFilter != null && meshFilter.sharedMesh != null)
+            Renderer renderer = hit.collider.GetComponent<Renderer>();
+            if (meshFilter != null && meshFilter.sharedMesh != null && renderer != null && IsWithinSizeLimit(renderer))
             {
                 lookedAtProp = hit.collider.gameObject;
                 break;
             }
         }
+    }
+
+    private bool IsWithinSizeLimit(Renderer renderer)
+    {
+        Vector3 size = renderer.bounds.size;
+        float maxDimension = Mathf.Max(size.x, size.y, size.z);
+        return maxDimension <= maxPropSize;
     }
 
     private void SetHighlight(GameObject target)
@@ -215,6 +231,7 @@ public class PropDisguise : MonoBehaviour
         SetPlayerRenderersVisible(false);
         isDisguised = true;
         isPositionLocked = false;
+        currentDisguisedProp = prop;
 
         if (playerMovement != null)
         {
@@ -230,7 +247,7 @@ public class PropDisguise : MonoBehaviour
         float playerBottomY = transform.position.y;
         if (playerController != null)
         {
-            playerBottomY += playerController.center.y - playerController.height * 0.5f;
+            playerBottomY += playerController.center.y - playerController.height * 0.5f - playerController.skinWidth;
         }
 
         Vector3 position = disguiseObject.transform.position;
@@ -245,6 +262,9 @@ public class PropDisguise : MonoBehaviour
             Destroy(disguiseObject);
             disguiseObject = null;
         }
+
+        lastDisguisedProp = currentDisguisedProp;
+        currentDisguisedProp = null;
 
         SetPlayerRenderersVisible(true);
         isDisguised = false;
