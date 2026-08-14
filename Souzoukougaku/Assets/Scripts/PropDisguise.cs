@@ -5,7 +5,7 @@ public class PropDisguise : MonoBehaviour
 {
     [Header("Detection")]
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float interactRange = 30f;
+    [SerializeField] private float interactRange = 45f;
     [SerializeField] private LayerMask propMask = ~0;
     [SerializeField] private float maxPropSize = 8f;
 
@@ -37,6 +37,9 @@ public class PropDisguise : MonoBehaviour
     private Renderer highlightedRenderer;
     private Material[] highlightedOriginalMaterials;
 
+    public bool IsDisguised => isDisguised;
+    public GameObject CurrentDisguisedProp => currentDisguisedProp;
+
     private void Awake()
     {
         if (cameraTransform == null && Camera.main != null)
@@ -59,6 +62,11 @@ public class PropDisguise : MonoBehaviour
         }
         highlightMaterial = new Material(shader);
         highlightMaterial.color = highlightColor;
+    }
+
+    private void OnDisable()
+    {
+        ClearHighlight();
     }
 
     private void Update()

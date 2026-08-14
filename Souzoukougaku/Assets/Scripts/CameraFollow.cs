@@ -38,6 +38,12 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+        targetController = target != null ? target.GetComponent<CharacterController>() : null;
+    }
+
     private Vector3 GetPivot()
     {
         if (targetController != null)

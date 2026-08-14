@@ -195,10 +195,10 @@ MonoBehaviour:
         Support/Claude/claude-code/2.1.227/claude.app/Contents/MacOS/claude:Q6L2SF6YDW
     DialogShown: 0
   - Info:
-      ConnectionId: 9bc25062-2b33-4ba4-80f9-a0be0ed76725
-      TimestampTicks: 639222946890133450
+      ConnectionId: ca653834-fa27-4389-a869-0d3fb58dd43b
+      TimestampTicks: 639223126783041590
       Server:
-        ProcessId: 5706
+        ProcessId: 1189
         ProcessName: relay_mac_arm64
         WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
         Identity:
@@ -279,7 +279,7 @@ MonoBehaviour:
 '
           SignatureValid: 1
       Client:
-        ProcessId: 5649
+        ProcessId: 1145
         ProcessName: claude
         WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
         Identity:
