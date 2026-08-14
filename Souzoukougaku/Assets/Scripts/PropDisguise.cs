@@ -5,7 +5,7 @@ public class PropDisguise : MonoBehaviour
 {
     [Header("Detection")]
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float interactRange = 15f;
+    [SerializeField] private float interactRange = 30f;
     [SerializeField] private LayerMask propMask = ~0;
     [SerializeField] private float maxPropSize = 8f;
 

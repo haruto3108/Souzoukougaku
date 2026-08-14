@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.MCP.Editor::Unity.AI.MCP.Editor.ConnectionRegistry
   connections:
   - Info:
-      ConnectionId: dcf16e20-82de-476e-b99d-ff8d95b823c3
-      TimestampTicks: 639222129984829460
+      ConnectionId: 98b1a38f-3104-4a81-8091-20cd38e1f8d2
+      TimestampTicks: 639222152734657950
       Server:
-        ProcessId: 7239
+        ProcessId: 8358
         ProcessName: relay_mac_arm64
         WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
         Identity:
@@ -98,7 +98,7 @@ MonoBehaviour:
 '
           SignatureValid: 1
       Client:
-        ProcessId: 7177
+        ProcessId: 8332
         ProcessName: claude
         WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
         Identity:
@@ -185,7 +185,7 @@ MonoBehaviour:
         Name: claude-code
         Version: 2.1.227
         Title: claude-code
-        ConnectionId: UnixSocket-1
+        ConnectionId: UnixSocket-2
     Status: 1
     ValidationReason: Approved by user
     Identity:
@@ -193,4 +193,185 @@ MonoBehaviour:
       ClientIdentityKey: Signed:/Users/satouharuto/Library/Application Support/Claude/claude-code/2.1.227/claude.app/Contents/MacOS/claude:Q6L2SF6YDW
       CombinedIdentityKey: Signed:/Users/satouharuto/.unity/relay/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64:9QW8UQUTAA|Signed:/Users/satouharuto/Library/Application
         Support/Claude/claude-code/2.1.227/claude.app/Contents/MacOS/claude:Q6L2SF6YDW
+    DialogShown: 0
+  - Info:
+      ConnectionId: 9bc25062-2b33-4ba4-80f9-a0be0ed76725
+      TimestampTicks: 639222946890133450
+      Server:
+        ProcessId: 5706
+        ProcessName: relay_mac_arm64
+        WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
+        Identity:
+          Path: /Users/satouharuto/.unity/relay/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64
+          SHA256Hash: 081907e8baaee06e7d839c35a318539cee67b00919502dfb2f63c2d2d9caed8c
+          IsSigned: 1
+          SignaturePublisher: 9QW8UQUTAA
+          SignatureFriendlyName: Unity Technologies SF
+          SignatureSubject: 'Executable=/Users/satouharuto/.unity/relay/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64
+
+            Identifier=com.unity.ai.assistant.relay
+
+            Format=app
+            bundle with Mach-O thin (arm64)
+
+            CodeDirectory v=20500 size=510632
+            flags=0x10000(runtime) hashes=15946+7 location=embedded
+
+            VersionPlatform=1
+
+            VersionMin=851968
+
+            VersionSDK=983552
+
+            Hash
+            type=sha256 size=32
+
+            CandidateCDHash sha256=2ed8a5df74eef2ca8707c331b46e9b2e818b4e76
+
+            CandidateCDHashFull
+            sha256=2ed8a5df74eef2ca8707c331b46e9b2e818b4e76c63c7ba45c3abda5e6c8593a
+
+            Hash
+            choices=sha256
+
+            CMSDigest=2ed8a5df74eef2ca8707c331b46e9b2e818b4e76c63c7ba45c3abda5e6c8593a
+
+            CMSDigestType=2
+
+            Executable
+            Segment base=0
+
+            Executable Segment limit=61276160
+
+            Executable
+            Segment flags=0x1
+
+            Page size=4096
+
+            CDHash=2ed8a5df74eef2ca8707c331b46e9b2e818b4e76
+
+            Signature
+            size=8992
+
+            Authority=Developer ID Application: Unity Technologies
+            SF (9QW8UQUTAA)
+
+            Authority=Developer ID Certification Authority
+
+            Authority=Apple
+            Root CA
+
+            Timestamp=Jul 11, 2026 at 0:46:17
+
+            Info.plist
+            entries=9
+
+            TeamIdentifier=9QW8UQUTAA
+
+            Runtime
+            Version=11.0.0
+
+            Sealed Resources version=2 rules=13 files=1
+
+            Internal
+            requirements count=1 size=188
+
+'
+          SignatureValid: 1
+      Client:
+        ProcessId: 5649
+        ProcessName: claude
+        WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
+        Identity:
+          Path: /Users/satouharuto/Library/Application Support/Claude/claude-code/2.1.229/claude.app/Contents/MacOS/claude
+          SHA256Hash: 92678218823353283cf8d04038b9122c1a63e6d83ad2a6ba87897334204e6493
+          IsSigned: 1
+          SignaturePublisher: Q6L2SF6YDW
+          SignatureFriendlyName: Anthropic PBC
+          SignatureSubject: 'Executable=/Users/satouharuto/Library/Application Support/Claude/claude-code/2.1.229/claude.app/Contents/MacOS/claude
+
+            Identifier=com.anthropic.claude-code
+
+            Format=app
+            bundle with Mach-O thin (arm64)
+
+            CodeDirectory v=20500 size=574853
+            flags=0x10000(runtime) hashes=17953+7 location=embedded
+
+            VersionPlatform=1
+
+            VersionMin=851968
+
+            VersionSDK=1705216
+
+            Hash
+            type=sha256 size=32
+
+            CandidateCDHash sha256=585b8670c6a8d8ab1ace3641895d4aa3a2eda2ec
+
+            CandidateCDHashFull
+            sha256=585b8670c6a8d8ab1ace3641895d4aa3a2eda2eccae576b2c7e29b1f4f5d2808
+
+            Hash
+            choices=sha256
+
+            CMSDigest=585b8670c6a8d8ab1ace3641895d4aa3a2eda2eccae576b2c7e29b1f4f5d2808
+
+            CMSDigestType=2
+
+            Executable
+            Segment base=0
+
+            Executable Segment limit=64274432
+
+            Executable
+            Segment flags=0x1
+
+            Page size=16384
+
+            CDHash=585b8670c6a8d8ab1ace3641895d4aa3a2eda2ec
+
+            Signature
+            size=9045
+
+            Authority=Developer ID Application: Anthropic
+            PBC (Q6L2SF6YDW)
+
+            Authority=Developer ID Certification Authority
+
+            Authority=Apple
+            Root CA
+
+            Timestamp=Aug 13, 2026 at 3:05:17
+
+            Notarization
+            Ticket=stapled
+
+            Info.plist entries=12
+
+            TeamIdentifier=Q6L2SF6YDW
+
+            Runtime
+            Version=26.5.0
+
+            Sealed Resources version=2 rules=13 files=0
+
+            Internal
+            requirements count=1 size=188
+
+'
+          SignatureValid: 1
+      ClientChainDepth: 1
+      ClientInfo:
+        Name: claude-code
+        Version: 2.1.229
+        Title: claude-code
+        ConnectionId: UnixSocket-1
+    Status: 1
+    ValidationReason: 'Auto-approved: previously accepted'
+    Identity:
+      ServerIdentityKey: Signed:/Users/satouharuto/.unity/relay/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64:9QW8UQUTAA
+      ClientIdentityKey: Signed:/Users/satouharuto/Library/Application Support/Claude/claude-code/2.1.229/claude.app/Contents/MacOS/claude:Q6L2SF6YDW
+      CombinedIdentityKey: Signed:/Users/satouharuto/.unity/relay/relay_mac_arm64.app/Contents/MacOS/relay_mac_arm64:9QW8UQUTAA|Signed:/Users/satouharuto/Library/Application
+        Support/Claude/claude-code/2.1.229/claude.app/Contents/MacOS/claude:Q6L2SF6YDW
     DialogShown: 0

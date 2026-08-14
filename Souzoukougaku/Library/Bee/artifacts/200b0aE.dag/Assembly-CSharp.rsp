@@ -490,8 +490,10 @@
 -analyzer:"Library/PackageCache/com.unity.dt.app-ui@8ac7e730dd5d/Runtime/MVVM/SourceGenerators/netstandard2.0/MVVMSourceGenerators.dll"
 -analyzer:"Library/PackageCache/com.unity.dt.app-ui@8ac7e730dd5d/Runtime/SourceGenerators/netstandard2.0/EnumToLowerCase.dll"
 "Assets/Scripts/CameraFollow.cs"
+"Assets/Scripts/CountdownTimer.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/PropDisguise.cs"
+"Assets/Scripts/TimeReductionItem.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 /deterministic
