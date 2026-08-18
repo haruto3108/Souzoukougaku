@@ -17,6 +17,7 @@ public class DemonPropChecker : MonoBehaviour
 
     [Header("Target")]
     [SerializeField] private PropDisguise playerDisguise;
+    [SerializeField] private WinManager winManager;
 
     private GameObject lookedAtProp;
 
@@ -170,5 +171,10 @@ public class DemonPropChecker : MonoBehaviour
         Debug.Log(isPlayer
             ? $"[DemonPropChecker] {target.name} はプレイヤーです。"
             : $"[DemonPropChecker] {target.name} はプレイヤーではありません。");
+
+        if (isPlayer && winManager != null)
+        {
+            winManager.CapturePlayer(playerDisguise);
+        }
     }
 }
