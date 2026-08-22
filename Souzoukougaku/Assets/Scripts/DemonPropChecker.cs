@@ -5,7 +5,7 @@ public class DemonPropChecker : MonoBehaviour
 {
     [Header("Detection")]
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float interactRange = 45f;
+    [SerializeField] private float interactRange = 60f;
     [SerializeField] private LayerMask propMask = ~0;
     [SerializeField] private float maxPropSize = 8f;
 
@@ -18,6 +18,8 @@ public class DemonPropChecker : MonoBehaviour
     [Header("Target")]
     [SerializeField] private PropDisguise playerDisguise;
     [SerializeField] private WinManager winManager;
+    [SerializeField] private CountdownTimer countdownTimer;
+    [SerializeField] private float wrongGuessPenalty = 10f;
 
     private GameObject lookedAtProp;
 
@@ -30,6 +32,11 @@ public class DemonPropChecker : MonoBehaviour
         if (cameraTransform == null && Camera.main != null)
         {
             cameraTransform = Camera.main.transform;
+        }
+
+        if (countdownTimer == null)
+        {
+            countdownTimer = FindFirstObjectByType<CountdownTimer>();
         }
 
         Shader shader = Shader.Find("Universal Render Pipeline/Unlit");
@@ -172,9 +179,16 @@ public class DemonPropChecker : MonoBehaviour
             ? $"[DemonPropChecker] {target.name} はプレイヤーです。"
             : $"[DemonPropChecker] {target.name} はプレイヤーではありません。");
 
-        if (isPlayer && winManager != null)
+        if (isPlayer)
         {
-            winManager.CapturePlayer(playerDisguise);
+            if (winManager != null)
+            {
+                winManager.CapturePlayer(playerDisguise);
+            }
+        }
+        else if (countdownTimer != null)
+        {
+            countdownTimer.ReduceTime(wrongGuessPenalty);
         }
     }
 }

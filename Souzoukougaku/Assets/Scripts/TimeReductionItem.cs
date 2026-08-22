@@ -4,6 +4,7 @@ using UnityEngine;
 public class TimeReductionItem : MonoBehaviour
 {
     [SerializeField] private float timeReduction = 15f;
+    [SerializeField] private NotificationManager notificationManager;
 
     private void Awake()
     {
@@ -22,6 +23,11 @@ public class TimeReductionItem : MonoBehaviour
         if (timer != null)
         {
             timer.ReduceTime(timeReduction);
+        }
+
+        if (notificationManager != null)
+        {
+            notificationManager.ShowMessage("アイテムを取得しました");
         }
 
         Destroy(gameObject);

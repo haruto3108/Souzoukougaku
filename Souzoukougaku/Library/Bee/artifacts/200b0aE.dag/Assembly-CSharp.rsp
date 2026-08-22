@@ -493,6 +493,7 @@
 "Assets/Scripts/CharacterSwitcher.cs"
 "Assets/Scripts/CountdownTimer.cs"
 "Assets/Scripts/DemonPropChecker.cs"
+"Assets/Scripts/NotificationManager.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/PropDisguise.cs"
 "Assets/Scripts/TimeReductionItem.cs"

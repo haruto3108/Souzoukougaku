@@ -5,6 +5,7 @@ public class CountdownTimer : MonoBehaviour
 {
     [SerializeField] private Text timerText;
     [SerializeField] private float durationSeconds = 180f;
+    [SerializeField] private WinManager winManager;
 
     private float remainingSeconds;
     private bool isRunning;
@@ -28,6 +29,11 @@ public class CountdownTimer : MonoBehaviour
         {
             remainingSeconds = 0f;
             isRunning = false;
+
+            if (winManager != null)
+            {
+                winManager.OnTimeUp();
+            }
         }
 
         UpdateDisplay();

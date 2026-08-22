@@ -195,10 +195,10 @@ MonoBehaviour:
         Support/Claude/claude-code/2.1.227/claude.app/Contents/MacOS/claude:Q6L2SF6YDW
     DialogShown: 0
   - Info:
-      ConnectionId: 0d731faf-5be5-4ba3-94f8-4784b9eef545
-      TimestampTicks: 639226502854477890
+      ConnectionId: 82e00cdc-8889-45e5-8948-e04ca336e24b
+      TimestampTicks: 639229773399055780
       Server:
-        ProcessId: 1869
+        ProcessId: 8265
         ProcessName: relay_mac_arm64
         WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
         Identity:
@@ -279,7 +279,7 @@ MonoBehaviour:
 '
           SignatureValid: 1
       Client:
-        ProcessId: 1854
+        ProcessId: 8243
         ProcessName: claude
         WorkingDirectory: /Users/satouharuto/Documents/GitHub/Souzoukougaku
         Identity:
@@ -366,7 +366,7 @@ MonoBehaviour:
         Name: claude-code
         Version: 2.1.229
         Title: claude-code
-        ConnectionId: UnixSocket-2
+        ConnectionId: UnixSocket-3
     Status: 1
     ValidationReason: 'Auto-approved: previously accepted'
     Identity:

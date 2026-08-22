@@ -5,7 +5,7 @@ public class PropDisguise : MonoBehaviour
 {
     [Header("Detection")]
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float interactRange = 45f;
+    [SerializeField] private float interactRange = 60f;
     [SerializeField] private LayerMask propMask = ~0;
     [SerializeField] private float maxPropSize = 8f;
 
@@ -13,6 +13,8 @@ public class PropDisguise : MonoBehaviour
     [SerializeField] private KeyCode disguiseKey = KeyCode.E;
     [SerializeField] private KeyCode fixPositionKey = KeyCode.F;
     [SerializeField] private KeyCode redisguiseKey = KeyCode.T;
+    [SerializeField] private KeyCode duplicateKey = KeyCode.C;
+    [SerializeField] private int maxDuplicates = 3;
 
     [Header("Player Model")]
     [SerializeField] private Renderer[] playerRenderers;
@@ -31,6 +33,7 @@ public class PropDisguise : MonoBehaviour
     private GameObject lastDisguisedProp;
     private bool isDisguised;
     private bool isPositionLocked;
+    private int duplicateCount;
     private Vector3 rotationPivotLocalOffset;
 
     private Material highlightMaterial;
@@ -85,6 +88,11 @@ public class PropDisguise : MonoBehaviour
                 {
                     playerMovement.SetPositionLocked(isPositionLocked);
                 }
+            }
+
+            if (Input.GetKeyDown(duplicateKey))
+            {
+                DuplicateDisguise();
             }
 
             if (Input.GetKeyDown(disguiseKey))
@@ -246,6 +254,35 @@ public class PropDisguise : MonoBehaviour
             playerMovement.SetRotationLocked(true);
             playerMovement.SetPositionLocked(false);
         }
+    }
+
+    private void DuplicateDisguise()
+    {
+        if (disguiseObject == null || duplicateCount >= maxDuplicates)
+        {
+            return;
+        }
+
+        MeshFilter sourceFilter = disguiseObject.GetComponent<MeshFilter>();
+        MeshRenderer sourceRenderer = disguiseObject.GetComponent<MeshRenderer>();
+
+        if (sourceFilter == null || sourceRenderer == null)
+        {
+            return;
+        }
+
+        string duplicateName = currentDisguisedProp != null ? currentDisguisedProp.name + " (Duplicate)" : "Duplicate";
+        GameObject duplicate = new GameObject(duplicateName);
+        duplicate.transform.SetPositionAndRotation(disguiseObject.transform.position, disguiseObject.transform.rotation);
+        duplicate.transform.localScale = disguiseObject.transform.lossyScale;
+
+        MeshFilter duplicateFilter = duplicate.AddComponent<MeshFilter>();
+        duplicateFilter.sharedMesh = sourceFilter.sharedMesh;
+
+        MeshRenderer duplicateRenderer = duplicate.AddComponent<MeshRenderer>();
+        duplicateRenderer.sharedMaterials = sourceRenderer.sharedMaterials;
+
+        duplicateCount++;
     }
 
     private void AlignBottomToPlayer(MeshRenderer propMeshRenderer)
